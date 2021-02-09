@@ -1,9 +1,9 @@
 const router = require('express').Router();
-let Demog = require('../models/demog.model');
+let Click = require('../models/click.model');
 
 router.route('/').get((req, res) => {
     Click.find()
-    .then(clickTrack => res.json(clickTrack))
+    .then(clicks => res.json(clicks))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

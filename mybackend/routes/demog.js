@@ -17,6 +17,6 @@ router.route('/add').post((req, res) => {
     newDemog.save()
     .then(() => res.json('Demographic Saved'))
     .catch(err => res.status(400).json('Error: ' + err));
-})
+});
 
 module.exports = router;

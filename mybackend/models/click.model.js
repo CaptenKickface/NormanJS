@@ -10,4 +10,6 @@ const clickSchema = new Schema({
     timestamps: true,
 });
 
-const ClickTrack = mongoose.model('ClickTrack', clickSchema)
+const Click = mongoose.model('Click', clickSchema)
+
+module.exports = Click;
