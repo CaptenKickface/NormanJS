@@ -19,4 +19,10 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+    Demog.findById(req.params.id)
+        .then(demog => res.json(demog))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

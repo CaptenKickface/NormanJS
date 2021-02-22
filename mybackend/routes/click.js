@@ -23,4 +23,10 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+    Click.findById(req.params.id)
+        .then(click => res.json(click))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
