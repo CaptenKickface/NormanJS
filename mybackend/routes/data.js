@@ -1,27 +1,27 @@
 const router = require('express').Router();
-let Demog = require('../models/demog.model');
+let Data = require('../models/data.model');
 
 router.route('/').get((req, res) => {
-    Demog.find()
-    .then(demogs => res.json(demogs))
+    Data.find()
+    .then(datas => res.json(datas))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
-    const demographic = req.body.demographic;
+    const dataList = req.body.dataList;
 
-    const newDemog = new Demog({
-        demographic,
+    const newData = new Data({
+        dataList,
     });
 
-    newDemog.save()
-    .then(() => res.json('Demographic Saved'))
+    newData.save()
+    .then(() => res.json('dataList Saved'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {
-    Demog.findById(req.params.id)
-        .then(demog => res.json(demog))
+    Data.findById(req.params.id)
+        .then(data => res.json(data))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 

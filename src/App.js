@@ -15,9 +15,9 @@ function App() {
             <div className="container">
             <Navbar />
             <br/>
-            <Route path ="/" component={Intro} />            
-            <Route path ="/test" component={Test} />
-            <Route path ="/data" component={DataList} />
+            <Route path ="/" exact component={Intro} />            
+            <Route path ="/test" exact component={Test} />
+            <Route path ="/data" exact component={DataList} />
             </div>              
         </Router>                 
     );

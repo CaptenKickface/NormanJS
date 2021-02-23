@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-const demogSchema = new Schema({
-    demographic: {
+const dataSchema = new Schema({
+    data: {
         type: String,
         required: true,
         unique: true,        
@@ -12,6 +12,6 @@ const demogSchema = new Schema({
     timestamps: true,
 });
 
-const Demog = mongoose.model('Demog', demogSchema)
+const Data = mongoose.model('Data', dataSchema)
 
-module.exports = Demog;
+module.exports = Data;
