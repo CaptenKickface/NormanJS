@@ -8,10 +8,25 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const dataList = req.body.dataList;
+    const demographic = req.body.object;
+    const timeOne = Number(req.body.object);
+    const clickOne = req.body.object;
+    const timeTwo = Number(req.body.object);
+    const clickTwo = req.body.object;
+    const timeThree = Number(req.body.object);
+    const clickThree = req.body.object;
+    const complete = Boolean(req.body.object);
+
 
     const newData = new Data({
-        dataList,
+        demographic,
+        timeOne,
+        clickOne,
+        timeTwo,
+        clickTwo,
+        timeThree,
+        clickThree,
+        complete,
     });
 
     newData.save()
