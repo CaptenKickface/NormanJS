@@ -8,13 +8,13 @@ export default class Intro extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         //The Following needs to be refactored to test
-        this.onChangeTimeOne = this.onChangeTimeOne.bind(this);
-        this.onChangeClickOne = this.onChangeClickOne.bind(this);
-        this.onChangeTimeTwo = this.onChangeTimeTwo.bind(this);
-        this.onChangeClickTwo = this.onChangeClickTwo.bind(this);
-        this.onChangeTimeThree = this.onChangeTimeThree.bind(this);
-        this.onChangeClickThree = this.onChangeClickThree.bind(this);
-        this.onChangeComplete = this.onChangeComplete.bind(this);
+        // this.onChangeTimeOne = this.onChangeTimeOne.bind(this);
+        // this.onChangeClickOne = this.onChangeClickOne.bind(this);
+        // this.onChangeTimeTwo = this.onChangeTimeTwo.bind(this);
+        // this.onChangeClickTwo = this.onChangeClickTwo.bind(this);
+        // this.onChangeTimeThree = this.onChangeTimeThree.bind(this);
+        // this.onChangeClickThree = this.onChangeClickThree.bind(this);
+        // this.onChangeComplete = this.onChangeComplete.bind(this);
 
         this.state = {
             demographic: '',
@@ -57,29 +57,30 @@ export default class Intro extends Component {
         window.location = '/test';
     }
 
-    Intro = () => {
-        const introduction = <p>Hey, please pick your age demographic</p>;
-        const demoQ = <form>
-            <input type="radio" name="choice" value="18-25"/> 18-25
-    <input type="radio" name="choice" value="25-40"/> 25-40
-    <input type="radio" name="choice" value="40-60"/> 40-60
-    <input type="radio" name="choice" value="60+"/> 60+
-        </form>
-        const submitButton =  <button onclick="submitAnswer()">Submit Answer</button>
+    // Intro = () => {
+    //     const introduction = <p>Hey, please pick your age demographic</p>;
+    //     const demoQ = <form>
+    //         <input type="radio" name="choice" value="18-25"/> 18-25
+    // <input type="radio" name="choice" value="25-40"/> 25-40
+    // <input type="radio" name="choice" value="40-60"/> 40-60
+    // <input type="radio" name="choice" value="60+"/> 60+
+    //     </form>
+    //     const submitButton =  <button onclick="submitAnswer()">Submit Answer</button>
     
-        const submitAnswer = () => {
+    //     const submitAnswer = () => {
     
-        }
-        var radios = document.getElementsByName('choice');
-        var value = "";
-    }
+    //     }
+    //     var radios = document.getElementsByName('choice');
+    //     var value = "";
+    // }
     render() {
         return (
-            <div className="instructions">
-            <h1>{introduction}</h1>  
-            <div>{demoQ}</div>  
-            <div>{submitButton}</div>        
-        </div>
+            console.log('Potato')
+        // //     <div className="instructions">
+        // //     <h1>{introduction}</h1>  
+        // //     <div>{demoQ}</div>  
+        // //     <div>{submitButton}</div>        
+        // // </div>
         )
     }
 }
