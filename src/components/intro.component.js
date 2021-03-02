@@ -7,7 +7,7 @@ export default class Intro extends Component {
         this.onChangeDemo = this.onChangeDemo.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
-        //The Following needs to be refactored to test
+        //The Following needs to be refactored to /test
         // this.onChangeTimeOne = this.onChangeTimeOne.bind(this);
         // this.onChangeClickOne = this.onChangeClickOne.bind(this);
         // this.onChangeTimeTwo = this.onChangeTimeTwo.bind(this);
@@ -57,30 +57,27 @@ export default class Intro extends Component {
         window.location = '/test';
     }
 
-    // Intro = () => {
-    //     const introduction = <p>Hey, please pick your age demographic</p>;
-    //     const demoQ = <form>
-    //         <input type="radio" name="choice" value="18-25"/> 18-25
-    // <input type="radio" name="choice" value="25-40"/> 25-40
-    // <input type="radio" name="choice" value="40-60"/> 40-60
-    // <input type="radio" name="choice" value="60+"/> 60+
-    //     </form>
-    //     const submitButton =  <button onclick="submitAnswer()">Submit Answer</button>
     
-    //     const submitAnswer = () => {
-    
-    //     }
-    //     var radios = document.getElementsByName('choice');
-    //     var value = "";
-    // }
     render() {
-        return (
-            console.log('Potato')
-        // //     <div className="instructions">
-        // //     <h1>{introduction}</h1>  
-        // //     <div>{demoQ}</div>  
-        // //     <div>{submitButton}</div>        
-        // // </div>
+        return (            
+            <div>
+      <h3>Hey, pick your demographic:</h3>
+      <form onSubmit={this.onSubmit}>
+        <div className="form-group"> 
+            <input type="radio" name="choice" value="18-25"/> 18-25
+            <br></br>
+            <input type="radio" name="choice" value="25-40"/> 25-40
+            <br></br>
+            <input type="radio" name="choice" value="40-60"/> 40-60
+            <br></br>
+            <input type="radio" name="choice" value="60+"/> 60+          
+        </div>       
+
+        <div className="form-group">
+          <input type="submit" value="Here we go" className="btn btn-primary" />
+        </div>
+      </form>
+    </div>
         )
     }
 }

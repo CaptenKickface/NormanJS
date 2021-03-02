@@ -8,14 +8,14 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const demographic = req.body.object;
-    const timeOne = Number(req.body.object);
-    const clickOne = req.body.object;
-    const timeTwo = Number(req.body.object);
-    const clickTwo = req.body.object;
-    const timeThree = Number(req.body.object);
-    const clickThree = req.body.object;
-    const complete = Boolean(req.body.object);
+    const demographic = req.body.demographic;
+    const timeOne = Number(req.body.timeOne);
+    const clickOne = req.body.clickOne;
+    const timeTwo = Number(req.body.timeTwo);
+    const clickTwo = req.body.clickTwo;
+    const timeThree = Number(req.body.timeThree);
+    const clickThree = req.body.clickThree;
+    const complete = Boolean(req.body.complete);
 
 
     const newData = new Data({
