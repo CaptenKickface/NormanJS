@@ -1,31 +1,31 @@
 const router = require('express').Router();
-let Data = require('../models/data.model');
+let DataClass = require('../models/data.model');
 
-router.route('/').get((req, res) => {
-    Data.find()
-    .then(datas => res.json(datas))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
+// router.route('/').get((req, res) => {
+//     DataClass.find()
+//     .then(datas => res.json(datas))
+//     .catch(err => res.status(400).json('Error: ' + err));
+// });
 
 router.route('/add').post((req, res) => {
     const demographic = req.body.demographic;
     const timeOne = Number(req.body.timeOne);
-    const clickOne = req.body.clickOne;
+    const wrongOne = req.body.wrongOne;
     const timeTwo = Number(req.body.timeTwo);
-    const clickTwo = req.body.clickTwo;
+    const wrongTwo = req.body.wrongTwo;
     const timeThree = Number(req.body.timeThree);
-    const clickThree = req.body.clickThree;
+    const wrongThree = req.body.wrongThree;
     const complete = Boolean(req.body.complete);
 
 
-    const newData = new Data({
+    const newData = new DataClass({
         demographic,
         timeOne,
-        clickOne,
+        wrongOne,
         timeTwo,
-        clickTwo,
+        wrongTwo,
         timeThree,
-        clickThree,
+        wrongThree,
         complete,
     });
 
@@ -35,9 +35,28 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/:id').get((req, res) => {
-    Data.findById(req.params.id)
-        .then(data => res.json(data))
+    DataClass.findById(req.params.id)
+        .then(datas => res.json(datas))
         .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/update/:id').post((req, res) => {
+    DataClass.findById(req.params.id)
+      .then(data => {
+        data.demographic = req.body.demographic;
+        data.timeOne = Number(req.body.timeOne);
+        data.wrongOne = req.body.wrongOne;
+        data.timeTwo = Number(req.body.timeTwo);
+        data.wrongTwo = req.body.wrongTwo;
+        data.timeThree = Number(req.body.timeThree);
+        data.wrongThree = req.body.wrongThree;
+        data.complete = Boolean(req.body.complete);
+  
+        data.save()
+          .then(() => res.json('Data updated!'))
+          .catch(err => res.status(400).json('Error: ' + err));
+      })
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
 
 module.exports = router;
