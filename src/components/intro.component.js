@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {Link} from "react-router-dom";
 
 export default class Intro extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ export default class Intro extends Component {
             wrongThree: [],
             question: 1,
             complete: false
+                      
         }  
     }
 
@@ -50,30 +52,40 @@ export default class Intro extends Component {
         axios.post('http://localhost:5000/data/add', dataList)
             .then(res => console.log(res.data));
 
-        // window.location = '/test';
+        
     }
+
 
     
     render() {
         return (            
             <div>
-      <h3>Hey, pick your demographic:</h3>
-      <form onSubmit={this.onSubmit}>
-        <div className="form-group">             
-            <input type="radio" name='Demo' value= '18-25' onChange={this.onChangeDemo}/> 18-25
-            <br/>
-            <input type="radio" name='Demo' value= '25-40' onChange={this.onChangeDemo}/> 25-40
-            <br/>
-            <input type="radio" name='Demo' value= '40-60' onChange={this.onChangeDemo}/> 40-60
-            <br/>
-            <input type="radio" name='Demo' value= '60+' onChange={this.onChangeDemo}/> 60+                     
-        </div>       
+                
+                <h3>Hey, pick your demographic:</h3>
+                
+                <form onSubmit={this.onSubmit} >
+                    <div className="form-group">             
+                        <input type="radio" name='Demo' value= '18-25' onChange={this.onChangeDemo}/> 18-25
+                        <br/>
+                        <input type="radio" name='Demo' value= '25-40' onChange={this.onChangeDemo}/> 25-40
+                        <br/>
+                        <input type="radio" name='Demo' value= '40-60' onChange={this.onChangeDemo}/> 40-60
+                        <br/>
+                        <input type="radio" name='Demo' value= '60+' onChange={this.onChangeDemo}/> 60+                     
+                    </div>       
 
-        <div className="form-group">
-          <input type="submit" value="Here we go" className="btn btn-primary" />
-        </div>
-      </form>
-    </div>
+                    <div className="form-group">
+                    <Link
+                    to={{
+                        pathname: "/test",    
+                        state: this.state
+                    }}
+                    >
+                    <input type="submit" value="Here we go" className="btn btn-primary" />
+                    </Link>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
