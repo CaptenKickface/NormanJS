@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import Button from 'react-bootstrap/Button'
-import Test from './test.component.js'
+
+
 
 export default class NavBar extends Component {
     
@@ -17,10 +16,10 @@ export default class NavBar extends Component {
                     <Nav className="mr-auto">
                         <Nav.Link onClick={() => this.props.handler('News')} >News</Nav.Link>                        
                         <Nav.Link onClick={() => this.props.handler('US')}>US</Nav.Link>
-                        <Nav.Link onClick={() => this.props.handler('Canadian')}>Canadian</Nav.Link>
+                        <Nav.Link onClick={() => this.props.handler('Canada')}>Canada</Nav.Link>
                         <Nav.Link onClick={() => this.props.handler('Schedule')}>Schedule</Nav.Link>                   
                         <Nav.Link onClick={() => this.props.handler('About')}>About</Nav.Link>                        
-                        <NavDropdown title="Contact" id="collasible-nav-dropdown" onClick={() => this.props.handler('Contact')}>
+                        <NavDropdown title="Contact" id="collasible-nav-dropdown">
                             <NavDropdown.Item onClick={() => this.props.handler('HR')}>HR</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => this.props.handler('CEO')}>CEO</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => this.props.handler('Ned')}>Ned</NavDropdown.Item>                            

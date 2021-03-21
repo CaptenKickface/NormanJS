@@ -2,3 +2,13 @@
     background-color: rgb(3, 10, 71);
     color: #ffffff;
 }
+
+div.noPadding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.noMargin {
+    margin-left: 0;
+    margin-right: 0;
+}

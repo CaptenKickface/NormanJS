@@ -11,9 +11,7 @@ export default class DataList extends Component {
     render() {
         console.log(this.state)
         return (
-            <div>
-                <p>You are on the Data List component!</p>
-            </div>
+            <p>Data it up!</p>
         )
     }
 }
