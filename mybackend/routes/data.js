@@ -7,7 +7,7 @@ let DataClass = require('../models/data.model');
 //     .catch(err => res.status(400).json('Error: ' + err));
 // });
 
-router.route('/add').post((req, res) => {
+router.route('/').post((req, res) => {
     const demographic = req.body.demographic;
     const timeOne = Number(req.body.timeOne);
     const wrongOne = req.body.wrongOne;
@@ -30,9 +30,15 @@ router.route('/add').post((req, res) => {
     });
 
     newData.save()
-    .then(() => res.json('dataList Saved'))
+    .then((data) => res.send(data))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/').get((req,res) => {
+    DataClass.find({})
+        .then(datas => res.json(datas))
+        .catch(err => res.status(400).json('Error: ' + err));
+})
 
 router.route('/:id').get((req, res) => {
     DataClass.findById(req.params.id)
@@ -40,7 +46,9 @@ router.route('/:id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
+
+
+router.route('/:id').put((req, res) => {
     DataClass.findById(req.params.id)
       .then(data => {
         data.demographic = req.body.demographic;
@@ -57,6 +65,8 @@ router.route('/update/:id').post((req, res) => {
           .catch(err => res.status(400).json('Error: ' + err));
       })
       .catch(err => res.status(400).json('Error: ' + err));
-  });
+});
+
+
 
 module.exports = router;

@@ -112,11 +112,11 @@ export default class Test extends Component {
     }
 
     render() {
-            
+            console.log(this.state)
         return (
             <div className="App">               
                 
-                <Container className="float-left" fluid='true'>
+                <Container className="flex-start" fluid='true'>
                 <Row><NavBar handler={this.AnswerHandler}/></Row>
                 <br/>
                 <br/>

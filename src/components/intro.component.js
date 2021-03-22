@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {Link} from "react-router-dom";
+import {Redirect} from "react-router-dom";
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 export default class Intro extends Component {
     constructor(props) {
@@ -48,9 +50,12 @@ export default class Intro extends Component {
         }
 
         console.log(dataList);
-
-        axios.post('http://localhost:5000/data/add', dataList)
-            .then(res => console.log(res.data));
+// only make call when radio button selected
+        if (this.state.demographic){
+            axios.post('http://localhost:5000/data', dataList)
+                .then(res => this.setState(prevState => ({...prevState,id: res.data._id})))
+                .then(()=>(console.log(this.state)))
+        }
 
         
     }
@@ -63,7 +68,7 @@ export default class Intro extends Component {
                 
                 <h3>Hey, pick your demographic:</h3>
                 
-                <form onSubmit={this.onSubmit} >
+                <Container>
                     <div className="form-group">             
                         <input type="radio" name='Demo' value= '18-25' onChange={this.onChangeDemo}/> 18-25
                         <br/>
@@ -75,16 +80,12 @@ export default class Intro extends Component {
                     </div>       
 
                     <div className="form-group">
-                    <Link
-                    to={{
-                        pathname: "/test",    
-                        state: this.state
-                    }}
-                    >
-                    <input type="submit" value="Here we go" className="btn btn-primary" />
-                    </Link>
+                    
+                    <Button onClick={this.onSubmit} value="" className="btn btn-primary">Here we go</Button>
+                    {this.state.id && <Redirect to={{ pathname: "/test", state: this.state}}/>}
+                   
                     </div>
-                </form>
+                </Container>
             </div>
         )
     }
