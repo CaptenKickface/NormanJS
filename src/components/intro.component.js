@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Modal from 'react-bootstrap/Modal'
+
 
 
 export default class Intro extends Component {
@@ -26,8 +26,7 @@ export default class Intro extends Component {
             timeThree: 0,
             wrongThree: [],
             question: 1,
-            complete: false
-                      
+            complete: false                      
         }  
     }
 

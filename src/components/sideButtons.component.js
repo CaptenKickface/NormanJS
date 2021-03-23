@@ -18,7 +18,7 @@ export default class SideButtons extends Component {
                 <Card.Body>
                     <Card.Title > Where's Ned? </Card.Title>
                     <Card.Text>
-                    Last seen back-packing across the pacific, Ned owes me money and can't be found!
+                    Last seen back-packing across the Pacific, Ned owes me money and can't be found!
                     Click below to donate money in his stead!
                     </Card.Text>
                     <Button variant="light" onClick={() => this.props.handler('Donate!')}>Donate!</Button>{''}
