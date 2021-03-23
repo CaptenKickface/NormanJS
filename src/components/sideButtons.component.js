@@ -52,7 +52,8 @@ export default class SideButtons extends Component {
                     If you can't get enough of Norman, why stop here!?
                     Google "Norman" to see plenty of people who may or may not be named "Norman"!
                     </Card.Text> 
-                    <Button variant="light" onClick={() => this.props.handler('Norman!')}>Norman!</Button>{' '}
+                    <Button href="https://www.google.com/search?q=Norman&client=firefox-b-1-d&sxsrf=ALeKk00KoFoIlq9encJZnDoujh3ydHDoFg%3A1616482569537&ei=CZFZYOWpINW0tAbCjbPYDA&oq=Norman&gs_lcp=Cgdnd3Mtd2l6EAMyCAguELEDEJMCMggILhCxAxCDATIFCC4QsQMyCAguEMcBEK8BMgUILhCxAzIFCC4QsQMyBQgAELEDMgIIADIFCC4QsQMyAggAOgcIIxCwAxAnOgcIABBHELADOgQIIxAnOgUIABCRAjoICC4QxwEQowI6CAgAELEDEIMBOgQILhBDOgQIABBDOgsILhCxAxDHARCjAjoCCC46BwguELEDEENQvk9Y7lNg2VRoAXACeACAAXSIAfAEkgEDNi4xmAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwil0t7q6sXvAhVVGs0KHcLGDMsQ4dUDCAw&uact=5"
+                     target="_blank" variant="light" onClick={() => this.props.handler('Norman!')}>Norman!</Button>{' '}
                 </Card.Body>
             </Card>            
         </div>

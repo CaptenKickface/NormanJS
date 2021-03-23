@@ -68,9 +68,13 @@ export default class Test extends Component {
                 <Container>
                     <h1>Welcome to the test!</h1>
                         <p>
-                            This website was designed... poorly. I'm going to ask you to do
-                            your best to find things around it. How about we start things off simply? 
-                            Try and click where I could find Canadian Bacon.
+                            Sorry about that first part; this website was designed... poorly. In some cases websites just don't behave
+                            or aren't set up how you'd expect. Sometimes standards get thrown out the window and it's hard to find what
+                            you're looking for.
+                        </p>
+                        <p>
+                            I'm going to ask you to do your best to find things around it. How about we start things off simply? 
+                            Try and click where I could find the best maple syrup. And don't click about randomly all willy nilly... I'll know.
                         </p>
                 </Container>
             </Jumbotron>
@@ -123,7 +127,7 @@ export default class Test extends Component {
                 <br/>
                     <Row>           
                         <Col lg={4} md={5} ><SideButtons handler={this.AnswerHandler}/></Col>
-                        <Col ><div className="Instructions">{this.Instruct()}</div></Col>
+                        <Col className="justify-content-md-center"><div className="Instructions">{this.Instruct()}</div></Col>
                    </Row>                
                     {this.state.question === 4 && <Redirect to={{ pathname: "/data", state: this.state}}/>}
                 </Container>
